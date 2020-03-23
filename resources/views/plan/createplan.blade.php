@@ -52,7 +52,7 @@
           class="form-control"
           placeholder="Enter Duration"
           name="duration"
-          
+          required
         />
       </div>
       <div class="form-group text-center">
@@ -73,6 +73,11 @@
         @endforeach
       </ul>
     </div>
+    @endif
+    @if(session()->has('message'))
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
     @endif
   </div>
 </div>

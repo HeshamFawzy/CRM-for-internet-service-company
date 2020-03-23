@@ -31,8 +31,8 @@ class PlanController extends Controller
             'cost' => $request->input('cost'),
             'duration' => $request->input('duration'),
         ]);
-        if(!$Plan->save()){
-            App::abort(500, 'Error');
+        if($Plan->save()){
+            return redirect('createplan')->with('message', 'Added Successfully!');
         }
         return view('plan.createplan');
     }
