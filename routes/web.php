@@ -24,3 +24,20 @@ Route::get('/home', 'HomeController@home')->name('home');
 Route::get('/createplan', 'PlanController@createplan')->name('createplan');
 
 Route::post('/createplanp', 'PlanController@createplanp')->name('createplanp');
+
+Route::get('/addemployee', 'EmployeeController@addemployee')->name('addemployee');
+
+Route::post('/addemployeep', 'EmployeeController@addemployeep')->name('addemployeep');
+
+
+
+
+
+
+
+
+Route::get('/viewemployee', 'PlanController@viewemployee')->name('viewemployee');
+
+Route::post('/editemployee', 'PlanController@editemployee')->name('editemployee');
+
+Route::get('/deleteemployee', 'PlanController@deleteemployee')->name('deleteemployee');

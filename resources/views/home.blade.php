@@ -36,7 +36,7 @@
                 <form action="{{ route('logout') }}" method="POST">
                         {{ csrf_field() }}
                         <button type="submit" class="dropdown-item">Logout</button>
-                    </form>
+                </form>
                 </div>
             </li>
         </ul>
@@ -58,8 +58,7 @@
                         </a>
                         <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="layout-static.html">Static
-                                    Navigation</a><a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="{{url ('addemployee')}}">Add Employee</a><a class="nav-link" href="{{url ('viewemployee')}}">View Employee</a><a class="nav-link" href="{{url ('editemployee')}}">Edit Employee</a><a class="nav-link" href="{{url ('deleteemployee')}}">Delete Employee</a>
                             </nav>
                         </div>
 
