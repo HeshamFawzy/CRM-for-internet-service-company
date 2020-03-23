@@ -43,8 +43,7 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts1"
-                            aria-expanded="false" aria-controls="collapseLayouts">
+                        <a class="nav-link collapsed" href="{{ url ('createplan')}}">
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                             Create Plan
                         </a>
