@@ -74,9 +74,16 @@ class EmployeeController extends Controller
     }
 
    
-    public function destroy($id)
+    public function deleteemployee($id)
     {
-        
+        $Employee = Employee::where('id', $id)->first();
+        if($Employee != null){
+            $Employee->delete();
+        }
+        if($Employee = 1){
+            return redirect('viewemployee')->with('message', 'Deleted Successfully!');
+        }
+        return view('employee.viewemployee');
     }
 
     public function searchemployee(Request $request)

@@ -36,3 +36,5 @@ Route::post('/searchemployee', 'EmployeeController@searchemployee')->name('searc
 Route::get('/editemployee/{id}', 'EmployeeController@editemployee')->name('editemployee');
 
 Route::post('/editemployeep', 'EmployeeController@editemployeep')->name('editemployeep');
+
+Route::get('/deleteemployee/{id}', 'EmployeeController@deleteemployee')->name('deleteemployee');
