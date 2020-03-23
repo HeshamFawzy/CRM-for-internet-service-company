@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use DB;
+
 use App\Employee;
 
 class EmployeeController extends Controller
@@ -13,9 +15,10 @@ class EmployeeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function viewemployee()
     {
-        //
+        $Employees = DB::table('Employees')->get();
+        return view('employee.viewemployee')->with('Employees' , $Employees);
     }
 
     /**

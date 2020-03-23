@@ -29,14 +29,10 @@ Route::get('/addemployee', 'EmployeeController@addemployee')->name('addemployee'
 
 Route::post('/addemployeep', 'EmployeeController@addemployeep')->name('addemployeep');
 
+Route::get('/viewemployee', 'EmployeeController@viewemployee')->name('viewemployee');
 
 
 
-
-
-
-
-Route::get('/viewemployee', 'PlanController@viewemployee')->name('viewemployee');
 
 Route::post('/editemployee', 'PlanController@editemployee')->name('editemployee');
 
