@@ -33,7 +33,6 @@ Route::get('/viewemployee', 'EmployeeController@viewemployee')->name('viewemploy
 
 Route::post('/searchemployee', 'EmployeeController@searchemployee')->name('searchemployee');
 
+Route::get('/editemployee/{id}', 'EmployeeController@editemployee')->name('editemployee');
 
-Route::post('/editemployee', 'PlanController@editemployee')->name('editemployee');
-
-Route::get('/deleteemployee', 'PlanController@deleteemployee')->name('deleteemployee');
+Route::post('/editemployeep', 'EmployeeController@editemployeep')->name('editemployeep');
