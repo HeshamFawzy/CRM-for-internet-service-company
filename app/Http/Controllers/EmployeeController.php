@@ -102,4 +102,15 @@ class EmployeeController extends Controller
     {
         //
     }
+
+    public function searchemployee(Request $request)
+    {
+        $Employees = Employee::Where('name', 'like' , '%'.$request->input('query').'%')
+        ->orwhere('contact', 'like' , '%'.$request->input('query').'%')
+        ->orWhere('email', 'like' , '%'.$request->input('query').'%')
+        ->orWhere('region', 'like' , '%'.$request->input('query').'%')
+        ->orderBy('created_at', 'desc')
+        ->get();
+        return view('employee.viewemployee')->with('Employees' , $Employees);
+    }
 }
