@@ -22,3 +22,5 @@ Route::get('/start', 'HomeController@start')->name('start');
 Route::get('/home', 'HomeController@home')->name('home');
 
 Route::get('/createplan', 'PlanController@createplan')->name('createplan');
+
+Route::post('/createplanp', 'PlanController@createplanp')->name('createplanp');
