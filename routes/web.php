@@ -21,4 +21,4 @@ Route::get('/start', 'HomeController@start')->name('start');
 
 Route::get('/home', 'HomeController@home')->name('home');
 
-Route::get('/createplan', 'PlanController@create')->name('createplan');
+Route::get('/createplan', 'PlanController@createplan')->name('createplan');

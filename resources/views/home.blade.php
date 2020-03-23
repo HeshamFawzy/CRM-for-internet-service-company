@@ -95,7 +95,7 @@
         </div>
         <div id="layoutSidenav_content">
             <main>
-               
+               @yield('content')
             </main>
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid">
