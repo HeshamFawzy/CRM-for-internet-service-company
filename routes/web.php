@@ -38,3 +38,19 @@ Route::get('/editemployee/{id}', 'EmployeeController@editemployee')->name('edite
 Route::post('/editemployeep', 'EmployeeController@editemployeep')->name('editemployeep');
 
 Route::get('/deleteemployee/{id}', 'EmployeeController@deleteemployee')->name('deleteemployee');
+
+
+Route::get('/addcustomer', 'CustomerController@addcustomer')->name('addcustomer');
+
+Route::post('/addcustomerp', 'CustomerController@addcustomerp')->name('addcustomerp');
+
+Route::get('/viewcustomer', 'CustomerController@viewcustomer')->name('viewcustomer');
+
+Route::post('/searchcustomer', 'CustomerController@searchcustomer')->name('searchcustomer');
+
+Route::get('/editcustomer/{id}', 'CustomerController@editcustomer')->name('editcustomer');
+
+Route::post('/editcustomerp', 'CustomerController@editcustomerp')->name('editcustomerp');
+
+Route::get('/deletecustomer/{id}', 'CustomerController@deletecustomer')->name('deletecustomer');
+
