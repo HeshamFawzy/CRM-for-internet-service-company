@@ -43,7 +43,7 @@
 
             .content {
                 text-align: center;
-                color: yellow;
+                color: red;
             }
 
             .title {
@@ -51,9 +51,9 @@
             }
 
             .links > a {
-                color: yellow;
+                color: red;
                 padding: 0 25px;
-                font-size: 12px;
+                font-size: 24px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    CRM
+                    
                 </div>
             </div>
         </div>

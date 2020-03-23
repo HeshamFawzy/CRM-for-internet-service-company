@@ -13,7 +13,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body style="background-image: url('./assets/img/Cover.jpg');background-size: cover;">
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
