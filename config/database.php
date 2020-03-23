@@ -42,7 +42,7 @@ return [
         'mysql' => array(
             'host' => '127.0.0.1',
             'driver'    => 'mysql',
-            'database'  => 'database',
+            'database'  => 'CRM',
             'username'  => 'root',
             'password'  => '',
             'charset'   => 'utf8',

@@ -4,25 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\User;
+
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function Start()
     {
-        $this->middleware('auth');
-    }
+        $Admin = User::create([
+            'name' => 'Admin',
+            'email' => 'Admin@Admin.com',
+            'password' => bcrypt('123456Aa_'),
+        ]);
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+        return redirect()->route('home');
+    }
+    
+    public function Home()
     {
-        return view('home');
+        return view('/home');
     }
 }
