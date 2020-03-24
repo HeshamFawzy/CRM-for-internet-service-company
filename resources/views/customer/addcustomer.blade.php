@@ -86,7 +86,7 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="plan" class="h4">Plan :</label>
+        <label for="plan" class="h4" style="color: red;">Plan :</label>
         <select id="plan" class="form-control" name="plan" required="">
           <option value="" disabled="disabled" selected="true"
             >Select Plan</option
@@ -95,6 +95,16 @@
           <option value="{{$option->id}}">{{$option->name}} </option>
           @endforeach @endif
         </select>
+      </div>
+      <div class="form-group">
+        <label for="expireddate" style="color: red;"><strong>Expired Date:</strong><br /></label
+        ><input
+          type="date"
+          class="form-control"
+          placeholder="Enter Customer Contact"
+          name="expireddate"
+          required
+        />
       </div>
       <div class="form-group text-center">
         <button

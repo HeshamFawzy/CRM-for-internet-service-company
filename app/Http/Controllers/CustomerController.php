@@ -35,6 +35,7 @@ class CustomerController extends Controller
             'region' => 'required',
             'business' => 'required',
             'plan' => 'required',
+            'expireddate' => 'required',
         ]);
 
         $Customer = Customer::create([
@@ -46,6 +47,7 @@ class CustomerController extends Controller
             'region' => $request->input('region'),
             'business' => $request->input('business'),
             'plan_id' => $request->input('plan'),
+            'expireddate' => $request->input('expireddate'),
         ]);
         if($Customer->save()){
             return redirect('addcustomer')->with('message', 'Added Successfully!');
