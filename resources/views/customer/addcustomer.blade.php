@@ -11,7 +11,7 @@
   <div class="card-body">
     <form
       method="post"
-      action="{{ route('addcustomer') }}"
+      action="{{ route('addcustomerp') }}"
       enctype="multipart/form-data"
     >
       {{ csrf_field() }}
@@ -57,12 +57,7 @@
       </div>
       <div class="form-group">
         <label for="gender"><strong>Customer Gender :</strong><br /></label>
-        <select
-          id="bloodgroup"
-          class="form-control"
-          name="bloodgroup"
-          required=""
-        >
+        <select id="gender" class="form-control" name="gender" required="">
           <option value="" disabled="disabled" selected="true"
             >Select Gender</option
           >
@@ -79,6 +74,27 @@
           name="region"
           required
         />
+      </div>
+      <div class="form-group">
+        <label for="business"><strong>Customer Business :</strong><br /></label>
+        <select id="business" class="form-control" name="business" required="">
+          <option value="" disabled="disabled" selected="true"
+            >Select Business</option
+          >
+          <option value="YES">YES</option>
+          <option value="NO">NO</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="plan" class="h4">Plan :</label>
+        <select id="plan" class="form-control" name="plan" required="">
+          <option value="" disabled="disabled" selected="true"
+            >Select Plan</option
+          >
+          @if($options ?? '') @foreach($options as $option)
+          <option value="{{$option->id}}">{{$option->name}} </option>
+          @endforeach @endif
+        </select>
       </div>
       <div class="form-group text-center">
         <button

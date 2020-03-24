@@ -4,81 +4,104 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use DB;
+
+use App\Customer;
+
 class CustomerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    /*public function viewemployee()
     {
-        //
-    }
+        $Employees = DB::table('Employees')->get();
+        return view('employee.viewemployee')->with('Employees' , $Employees);
+    }*/
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function addcustomer()
     {
+        $Plans = DB::table('Plans')->get();
+        return view('customer.addcustomer')->with('options' , $Plans);
+    }
+
+    
+    public function addcustomerp(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'contact' => 'required',
+            'email' => 'required',
+            'age' => 'required',
+            'gender' => 'required',
+            'region' => 'required',
+            'business' => 'required',
+            'plan' => 'required',
+        ]);
+
+        $Customer = Customer::create([
+            'name' => $request->input('name'),
+            'contact' => $request->input('contact'),
+            'email' => $request->input('email'),
+            'age' => $request->input('age'),
+            'gender' => $request->input('gender'),
+            'region' => $request->input('region'),
+            'business' => $request->input('business'),
+            'plan_id' => $request->input('plan'),
+        ]);
+        if($Customer->save()){
+            return redirect('addcustomer')->with('message', 'Added Successfully!');
+        }
         return view('customer.addcustomer');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    
+    /*public function editemployee($id)
     {
-        //
+        $Employee = DB::table('Employees')->where('id', $id)->first();
+        return view('employee.editemployee')->with('Employee', $Employee);
+    } 
+    
+    public function editemployeep(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'contact' => 'required',
+            'email' => 'required',
+            'region' => 'required',
+        ]);
+
+        $Employee = Employee::where('id' , '=' , $request->input('id'))->update([
+            'name' => $request->input('name'),
+            'contact' => $request->input('contact'),
+            'email' => $request->input('email'),
+            'region' => $request->input('region'),
+        ]);
+        if($Employee = 1){
+            return redirect('viewemployee')->with('message', 'Updated Successfully!');
+        }
+        return view('employee.viewemployee');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+   
+    public function deleteemployee($id)
     {
-        //
+        $Employee = Employee::where('id', $id)->first();
+        if($Employee != null){
+            $Employee->delete();
+        }
+        if($Employee = 1){
+            return redirect('viewemployee')->with('message', 'Deleted Successfully!');
+        }
+        return view('employee.viewemployee');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function searchemployee(Request $request)
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+        $Employees = Employee::Where('name', 'like' , '%'.$request->input('query').'%')
+        ->orwhere('contact', 'like' , '%'.$request->input('query').'%')
+        ->orWhere('email', 'like' , '%'.$request->input('query').'%')
+        ->orWhere('region', 'like' , '%'.$request->input('query').'%')
+        ->orderBy('created_at', 'desc')
+        ->get();
+        return view('employee.viewemployee')->with('Employees' , $Employees);
+    }*/
 }
