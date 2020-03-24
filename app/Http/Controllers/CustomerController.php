@@ -12,7 +12,10 @@ class CustomerController extends Controller
 {
     public function viewcustomer()
     {
-        $Customers = DB::table('Customers')->get();
+        $Customers = DB::table('Customers')
+        ->join('Plans', 'Customers.plan_id', '=', 'Plans.id')
+        ->select('Customers.*', 'Plans.name as planName')
+        ->get();
         return view('customer.viewcustomer')->with('Customers' , $Customers);
     }
 

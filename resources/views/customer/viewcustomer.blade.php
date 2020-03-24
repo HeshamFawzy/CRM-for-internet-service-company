@@ -26,6 +26,8 @@
                     <th scope="col">Contact</th>
                     <th scope="col">Email</th>
                     <th scope="col">Region</th>
+                    <th scope="col">Plan</th>
+                    <th scope="col">Expired Date</th>
                     <th scope="col">Operation</th>
                 </tr>
             </thead>
@@ -36,6 +38,8 @@
                     <td>{{$row->contact}}</td>
                     <td>{{$row->email}}</td>
                     <td>{{$row->region}}</td>
+                    <td>{{$row->planName}}</td>
+                    <td>{{$row->expireddate}}</td>
                     <td>
                         <a href="{{ url('/editcustomer' , $row->id)}}" class="btn btn-success">Edit</a>
                         <a href="{{ url('/deletecustomer' , $row->id)}}" class="btn btn-danger" name="delete">Delete</a>
