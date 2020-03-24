@@ -54,3 +54,9 @@ Route::post('/editcustomerp', 'CustomerController@editcustomerp')->name('editcus
 
 Route::get('/deletecustomer/{id}', 'CustomerController@deletecustomer')->name('deletecustomer');
 
+
+Route::get('/addcomplaint', 'ComplaintController@addcomplaint')->name('addcomplaint');
+
+Route::post('/addcomplaintp', 'ComplaintController@addcomplaintp')->name('addcomplaintp');
+
+Route::get('/viewcomplaint', 'ComplaintController@viewcomplaint')->name('viewcomplaint');

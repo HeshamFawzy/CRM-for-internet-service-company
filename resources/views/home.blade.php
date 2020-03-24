@@ -73,8 +73,7 @@
                         </a>
                         <div class="collapse" id="collapseLayouts4" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="layout-static.html">Static
-                                    Navigation</a><a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="{{url ('addcomplaint')}}">Add Complaint</a><a class="nav-link" href="{{url ('viewcomplaint')}}">View Complaint</a>
                             </nav>
                         </div>
                     </div>

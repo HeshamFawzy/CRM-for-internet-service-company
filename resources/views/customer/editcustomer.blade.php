@@ -60,7 +60,7 @@
             </div>
             <div class="form-group">
                 <label for="expireddate" style="color: red;"><strong>Expired Date:</strong><br /></label><input
-                    type="date" class="form-control" placeholder="Enter Customer Contact" name="expireddate" required
+                    type="date" class="form-control" placeholder="Enter Expired Date" name="expireddate" required
                     value="{{$Customer->expireddate}}" />
             </div>
             <div class="form-group text-center">
