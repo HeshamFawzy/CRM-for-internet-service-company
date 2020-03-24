@@ -16,12 +16,12 @@
     >
       {{ csrf_field() }}
       <input
-          type="text"
+          type="number"
           class="form-control"
-          placeholder="Enter Employee Name"
           name="id"
           required
           value="{{$Employee->id}}"
+          hidden
         />
       <div class="form-group">
         <label for="name"><strong>Employee Name :</strong><br /></label

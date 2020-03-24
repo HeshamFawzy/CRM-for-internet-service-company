@@ -64,48 +64,59 @@ class CustomerController extends Controller
         return view('customer.editcustomer')->with('Customer' , $Customer)->with('options', $Plans)->with('plan' , $Plan);
     } 
     
-    /*public function editemployeep(Request $request)
+    public function editcustomerp(Request $request)
     {
         $validatedData = $request->validate([
             'name' => 'required',
             'contact' => 'required',
             'email' => 'required',
+            'age' => 'required',
+            'gender' => 'required',
             'region' => 'required',
+            'business' => 'required',
+            'plan' => 'required',
+            'expireddate' => 'required',
         ]);
 
-        $Employee = Employee::where('id' , '=' , $request->input('id'))->update([
+        $Customer = Customer::where('id' , '=' , $request->input('id'))->update([
             'name' => $request->input('name'),
             'contact' => $request->input('contact'),
             'email' => $request->input('email'),
+            'age' => $request->input('age'),
+            'gender' => $request->input('gender'),
             'region' => $request->input('region'),
+            'business' => $request->input('business'),
+            'plan_id' => $request->input('plan'),
+            'expireddate' => $request->input('expireddate'),
         ]);
-        if($Employee = 1){
-            return redirect('viewemployee')->with('message', 'Updated Successfully!');
+
+        if($Customer = 1){
+            return redirect('viewcustomer')->with('message', 'Updated Successfully!');
         }
-        return view('employee.viewemployee');
+        return view('customer.viewcustomer');
     }
 
    
-    public function deleteemployee($id)
+    public function deletecustomer($id)
     {
-        $Employee = Employee::where('id', $id)->first();
-        if($Employee != null){
-            $Employee->delete();
+        $Customer = Customer::where('id', $id)->first();
+        if($Customer != null){
+            $Customer->delete();
         }
-        if($Employee = 1){
-            return redirect('viewemployee')->with('message', 'Deleted Successfully!');
+        if($Customer = 1){
+            return redirect('viewcustomer')->with('message', 'Deleted Successfully!');
         }
-        return view('employee.viewemployee');
+        return view('customer.viewcustomer');
     }
 
-    public function searchemployee(Request $request)
+    public function searchcustomer(Request $request)
     {
-        $Employees = Employee::Where('name', 'like' , '%'.$request->input('query').'%')
+        $Customers = Customer::Where('name', 'like' , '%'.$request->input('query').'%')
         ->orwhere('contact', 'like' , '%'.$request->input('query').'%')
         ->orWhere('email', 'like' , '%'.$request->input('query').'%')
         ->orWhere('region', 'like' , '%'.$request->input('query').'%')
         ->orderBy('created_at', 'desc')
         ->get();
-        return view('employee.viewemployee')->with('Employees' , $Employees);
-    }*/
+        return view('customer.viewcustomer')->with('Customers' , $Customers);
+    }
 }

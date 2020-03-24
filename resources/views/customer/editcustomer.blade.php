@@ -5,16 +5,24 @@
       class="text-center text-primary m-0 font-weight-bold"
       style="font-size: 36px;"
     >
-      Add Customer
+      Edit Customer
     </p>
   </div>
   <div class="card-body">
     <form
       method="post"
-      action="{{ route('addcustomerp') }}"
+      action="{{ route('editcustomerp') }}"
       enctype="multipart/form-data"
     >
       {{ csrf_field() }}
+      <input
+          type="number"
+          class="form-control"
+          name="id"
+          required
+          value="{{$Customer->id}}"
+          hidden
+        />
       <div class="form-group">
         <label for="name"><strong>Customer Name :</strong><br /></label
         ><input
@@ -118,7 +126,7 @@
           type="submit"
           style="width: 100px;"
         >
-          Create
+          Edit
         </button>
       </div>
     </form>
