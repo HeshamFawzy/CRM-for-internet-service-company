@@ -12,12 +12,12 @@ use App\Complaint;
 
 class ComplaintController extends Controller
 {
-    /*public function viewcomplaint()
+    public function viewcomplaint()
     {
         $Complaints = DB::table('complaints')
         ->get();
         return view('complaint.viewcomplaint')->with('Complaints' , $Complaints);
-    }*/
+    }
 
     
     public function addcomplaint()
