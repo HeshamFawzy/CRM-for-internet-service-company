@@ -10,11 +10,11 @@ use App\Customer;
 
 class CustomerController extends Controller
 {
-    /*public function viewemployee()
+    public function viewcustomer()
     {
-        $Employees = DB::table('Employees')->get();
-        return view('employee.viewemployee')->with('Employees' , $Employees);
-    }*/
+        $Customers = DB::table('Customers')->get();
+        return view('customer.viewcustomer')->with('Customers' , $Customers);
+    }
 
     
     public function addcustomer()
@@ -56,13 +56,15 @@ class CustomerController extends Controller
     }
 
     
-    /*public function editemployee($id)
+    public function editcustomer($id)
     {
-        $Employee = DB::table('Employees')->where('id', $id)->first();
-        return view('employee.editemployee')->with('Employee', $Employee);
+        $Customer = DB::table('Customers')->where('id', $id)->first();
+        $Plans =  DB::table('Plans')->get();
+        $Plan = DB::table('Plans')->where('id' , $Customer->plan_id)->first();
+        return view('customer.editcustomer')->with('Customer' , $Customer)->with('options', $Plans)->with('plan' , $Plan);
     } 
     
-    public function editemployeep(Request $request)
+    /*public function editemployeep(Request $request)
     {
         $validatedData = $request->validate([
             'name' => 'required',
