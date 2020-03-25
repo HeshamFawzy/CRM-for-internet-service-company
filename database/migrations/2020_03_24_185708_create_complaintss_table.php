@@ -18,6 +18,7 @@ class CreateComplaintssTable extends Migration
             $table->Integer('customer_id')->unsigned();
             $table->string('text');
             $table->date('date');
+            $table->string('state');
             $table->timestamps();
 
             $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
