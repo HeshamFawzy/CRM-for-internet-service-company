@@ -32,7 +32,7 @@ class CustomerController extends Controller
         $validatedData = $request->validate([
             'name' => 'required',
             'contact' => 'required',
-            'email' => 'required',
+            'email' => 'required|unique:customers',
             'age' => 'required',
             'gender' => 'required',
             'region' => 'required',
@@ -72,7 +72,7 @@ class CustomerController extends Controller
         $validatedData = $request->validate([
             'name' => 'required',
             'contact' => 'required',
-            'email' => 'required',
+            'email' => 'required|unique:customers',
             'age' => 'required',
             'gender' => 'required',
             'region' => 'required',
