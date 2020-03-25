@@ -62,3 +62,7 @@ Route::post('/addcomplaintp', 'ComplaintController@addcomplaintp')->name('addcom
 Route::get('/viewcomplaint', 'ComplaintController@viewcomplaint')->name('viewcomplaint');
 
 Route::post('/searchcomplaint', 'ComplaintController@searchcomplaint')->name('searchcomplaint');
+
+Route::get('/solvecomplaint/{id}', 'ComplaintController@solvecomplaint')->name('solvecomplaint');
+
+Route::get('/unsolvecomplaint/{id}', 'ComplaintController@unsolvecomplaint')->name('unsolvecomplaint');

@@ -10,12 +10,15 @@ use App\Customer;
 
 use App\Complaint;
 
+use Redirect;
+
 class ComplaintController extends Controller
 {
     public function viewcomplaint()
     {
-        $Complaints = DB::table('complaints')
-        ->join('Customers', 'Customers.id', '=', 'complaints.customer_id')
+        $Complaints = DB::table('Complaints')
+        ->join('Customers', 'Customers.id', '=', 'Complaints.customer_id')
+        ->select('*', 'Complaints.id as Comid')
         ->get();
         return view('complaint.viewcomplaint')->with('Complaints' , $Complaints);
     }
@@ -56,5 +59,27 @@ class ComplaintController extends Controller
         ->orderBy('Complaints.created_at', 'desc')
         ->get();
         return view('complaint.viewcomplaint')->with('Complaints' , $Complaints);
+    }
+
+    public function solvecomplaint($id)
+    {
+        $Complaint = Complaint::where('id' , '=' , $id)->update([
+            'state' => '1'
+        ]);
+        if($Complaint = 1){
+            return redirect('viewcomplaint')->with('message', 'Updated Successfully!');
+        }
+        return view('complaint.viewcomplaint');
+    }
+
+    public function unsolvecomplaint($id)
+    {
+        $Complaint = Complaint::where('id' , '=' , $id)->update([
+            'state' => '0'
+        ]);
+        if($Complaint = 1){
+            return redirect('viewcomplaint')->with('message', 'Updated Successfully!');
+        }
+        return view('complaint.viewcomplaint');
     }
 }

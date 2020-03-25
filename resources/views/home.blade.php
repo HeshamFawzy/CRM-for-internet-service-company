@@ -8,26 +8,28 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Dashboard - SB Admin</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <link href="{{ asset('assets/css/styles.css')}}" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous">
+    </script>
     </script>
 </head>
 
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-        <a class="navbar-brand" href="{{ url('/')}}">CRM</a><button
-            class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i
-                class="fas fa-bars"></i></button><!-- Navbar Search-->
+        <a class="navbar-brand" href="{{ url('/')}}">CRM</a><button class="btn btn-link btn-sm order-1 order-lg-0"
+            id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button><!-- Navbar Search-->
         <!-- Navbar-->
         <ul class="navbar-nav ml-auto ml-md-0">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                <form action="{{ route('logout') }}" method="POST">
+                    <form action="{{ route('logout') }}" method="POST">
                         {{ csrf_field() }}
                         <button type="submit" class="dropdown-item">Logout</button>
-                </form>
+                    </form>
                 </div>
             </li>
         </ul>
@@ -49,7 +51,9 @@
                         </a>
                         <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="{{url ('addemployee')}}">Add Employee</a><a class="nav-link" href="{{url ('viewemployee')}}">View Employee</a>
+                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link"
+                                    href="{{url ('addemployee')}}">Add Employee</a><a class="nav-link"
+                                    href="{{url ('viewemployee')}}">View Employee</a>
                             </nav>
                         </div>
 
@@ -61,7 +65,9 @@
                         </a>
                         <div class="collapse" id="collapseLayouts3" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="{{url ('addcustomer')}}">Add Customer</a><a class="nav-link" href="{{url ('viewcustomer')}}">View Customer</a>
+                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link"
+                                    href="{{url ('addcustomer')}}">Add Customer</a><a class="nav-link"
+                                    href="{{url ('viewcustomer')}}">View Customer</a>
                             </nav>
                         </div>
 
@@ -73,7 +79,9 @@
                         </a>
                         <div class="collapse" id="collapseLayouts4" aria-labelledby="headingOne"
                             data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="{{url ('addcomplaint')}}">Add Complaint</a><a class="nav-link" href="{{url ('viewcomplaint')}}">View Complaint</a>
+                            <nav class="sb-sidenav-menu-nested nav"><a class="nav-link"
+                                    href="{{url ('addcomplaint')}}">Add Complaint</a><a class="nav-link"
+                                    href="{{url ('viewcomplaint')}}">View Complaint</a>
                             </nav>
                         </div>
                     </div>
@@ -86,7 +94,7 @@
         </div>
         <div id="layoutSidenav_content">
             <main>
-               @yield('content')
+                @yield('content')
             </main>
         </div>
     </div>

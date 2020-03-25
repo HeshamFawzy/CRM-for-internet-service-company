@@ -38,6 +38,10 @@
                         <td>
                             {{$row->state == 0 ? 'Not Solved' : 'Solved'}}
                         </td>
+                        <td>
+                            <a id="a-div" href="{{ url('/solvecomplaint' , $row->Comid)}}"
+                                class="btn btn-success">Solve</a>
+                        </td>
                     </tr>
                     @endforeach @endif
                 </tbody>
@@ -59,4 +63,4 @@
         </div>
     </div>
 </div>
-    @endsection
+@endsection
